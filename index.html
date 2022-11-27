@@ -1,35 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Profile card component</title>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  Victor Crest
-  26
-  London
+        <title>Frontend Mentor | Profile card component</title>
 
-  80K
-  Followers
+        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+            @import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+            :root {
+                --darkCyan: hsl(185, 75%, 39%);
+                --vDkDesatBlue: hsl(229, 23%, 23%);
+                --darkGrayishBlue: hsl(227, 10%, 46%);
+                --darkGray: hsl(0, 0%, 59%);
+                --darkGrayFaded: rgba(150, 150, 150, 0.2);
+                font-size: 18px;
+                font-family: "Kumbh Sans", sans-serif;
+                font-weight: 700;
+            }
 
-  803K
-  Likes
+            .card-container {
+                height: 650px;
+                width: 360px;
+                background-image: url("./images/bg-pattern-top.svg"),
+                    url("./images/bg-pattern-bottom.svg");
+                background-position: -390px -300px, 200px 350px;
+                background-repeat: no-repeat;
+                background-color: var(--darkCyan);
+                background-size: 600px, 600px;
+                margin: 40px auto;
+                position: relative;
+            }
 
-  1.4K
-  Photos
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+            .card {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 350px;
+                width: 300px;
+                background-color: white;
+                border-radius: 14px;
+                color: var(--vDkDesatBlue);
+            }
+
+            .top-section {
+                height: 130px;
+                border-top-left-radius: 14px;
+                border-top-right-radius: 14px;
+                background-image: url("./images/bg-pattern-card.svg");
+            }
+
+            .profile-img {
+                background-image: url(./images/image-victor.jpg);
+                margin: -50px auto;
+                border-style: solid;
+                border-width: 6px;
+                border-color: white;
+                height: 95px;
+                width: 95px;
+                border-radius: 50%;
+            }
+
+            .info-section {
+                display: flex;
+                height: 50px;
+                justify-content: center;
+                margin-top: 40px;
+            }
+
+            #card-age {
+                margin-left: 8px;
+            }
+
+            #card-age,
+            #card-city,
+            span {
+                font-weight: 400;
+                color: var(--darkGrayishBlue);
+            }
+
+            .city-section {
+                display: flex;
+                justify-content: center;
+                height: 10%;
+                margin-top: -30px;
+                margin-bottom: 45px;
+            }
+
+            #card-city {
+                font-size: 16px;
+                padding-top: 10px;
+            }
+
+            .metrics-section {
+                display: flex;
+                justify-content: space-around;
+                height: 26%;
+                border-top-color: var(--darkGrayFaded);
+                border-top-style: solid;
+                border-top-width: thin;
+                margin-top: -14px;
+                padding-top: 10px;
+            }
+
+            #card-followers,
+            #card-likes,
+            #card-photos {
+                text-align: center;
+                font-size: 16px;
+            }
+
+            span {
+                display: inline-block;
+                padding-top: 6px;
+                font-size: 14px;
+            }
+
+            .attribution {
+                font-size: 20px;
+                font-family: "Lobster Two", cursive;
+                text-align: center;
+            }
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+
+            @media screen and (min-width: 1500px) {
+                .card-container {
+                    width: 1440px;
+                    background-position: -90px -400px, 710px 330px;
+                    background-size: 800px, 860px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card-container">
+            <!--<img src="./images/bg-pattern-bottom.svg" />-->
+            <div class="card">
+                <div class="top-section"></div>
+                <div class="profile-img"></div>
+                <div class="info-section">
+                    <br />
+                    <p id="card-name">Victor Crest</p>
+                    <p id="card-age">26</p>
+                </div>
+                <div class="city-section">
+                    <p id="card-city">London</p>
+                </div>
+                <div class="metrics-section">
+                    <p id="card-followers" class="card-metrics">
+                        80K<br />
+                        <span>Followers</span>
+                    </p>
+                    <p id="card-likes" class="card-metrics">
+                        803K<br />
+                        <span>Likes</span>
+                    </p>
+                    <p id="card-photos" class="card-metrics">
+                        1.4K<br />
+                        <span>Photos</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by <a href="#">Linzi Jayne</a>.
+        </div>
+    </body>
 </html>
